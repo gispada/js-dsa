@@ -1,4 +1,4 @@
-import { HashMap } from './index'
+import { HashTable } from './index'
 
 const createSetAndGetTestCase = (map) => {
   map.set('name', 'John')
@@ -14,24 +14,24 @@ const createSetAndGetTestCase = (map) => {
   expect(map.get('name')).toEqual('John')
 }
 
-describe('HashMap', () => {
+describe('HashTable', () => {
   it('Gets the correct map size', () => {
-    const map = new HashMap()
+    const map = new HashTable()
     expect(map.size).toEqual(0)
     map.set('name', 'John')
     expect(map.size).toEqual(1)
   })
 
   it('Sets and gets multiple keys with 10 buckets', () => {
-    createSetAndGetTestCase(new HashMap(10))
+    createSetAndGetTestCase(new HashTable(10))
   })
 
   it('Sets and gets multiple keys with 2 buckets', () => {
-    createSetAndGetTestCase(new HashMap(2))
+    createSetAndGetTestCase(new HashTable(2))
   })
 
   it('Removes a key', () => {
-    const map = new HashMap()
+    const map = new HashTable()
     map.set('name', 'John')
     map.remove('name')
     expect(map.get('name')).toBeNull()

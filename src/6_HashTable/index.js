@@ -1,4 +1,4 @@
-export class HashMap {
+export class HashTable {
   constructor(bucketsNum = 10) {}
 
   get size() {}
